@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Era | By VTech CreatorX</title>
+  <!-- Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    nav {
+      background: #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .logo {
+      font-size: 28px;
+      font-weight: 700;
+      background: linear-gradient(90deg, #0ff, #00f, #f0f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: neon 5s linear infinite;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-left: 30px;
+    }
+/* Navbar link hover */
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  transition: color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+  color: #0ff;
+  transform: translateY(-2px);
+}
+
+/* Card hover (already done but more glow!) */
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 30px #0ff;
+}
+
+/* Image hover (profile pic) */
+.about-img:hover {
+  transform: scale(1.1) rotate(2deg);
+  box-shadow: 0 0 40px #0ff;
+}
+
+/* Social icon hover */
+.social a {
+  display: inline-block;
+  color: #0ff;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social a:hover {
+  transform: scale(1.2) rotate(5deg);
+  color: #fff;
+}
+
+
+    /* Hamburger menu */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      margin: 4px;
+    }
+
+    @keyframes neon {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .about-img {
+  display: block;
+  max-width: 200px;
+  border-radius: 50%;
+  border: 4px solid #0ff;
+  margin: 20px auto;
+  box-shadow: 0 0 20px #0ff;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #0ff;
+}
+
+    h1, h2 {
+      text-align: center;
+      background: linear-gradient(90deg, #0ff, #00f, #f0f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: neon 5s linear infinite;
+      font-weight: 700;
+    }
+
+    p {
+      text-align: center;
+      max-width: 700px;
+      margin: 20px auto;
+      color: #ccc;
+      font-size: 16px;
+    }
+
+    .services, .portfolio, .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: #111;
+      border: 2px solid #0ff;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px #0ff;
+    }
+
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 50px;
+      border-top: 2px solid #0ff;
+    }
+
+    footer p {
+      color: #888;
+      font-size: 14px;
+    }
+
+    .contact p {
+      color: #fff;
+    }
+
+    .social a {
+      color: #0ff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .social a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #111;
+        position: absolute;
+        top: 70px;
+        right: 50px;
+        width: 200px;
+        border: 2px solid #0ff;
+        border-radius: 8px;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      nav ul li {
+        margin: 15px 0;
+        text-align: center;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Edit Era</div>
+    <div class="menu-toggle" id="menu-toggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#help">Help</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sections -->
+  <section id="home">
+    <h1>Welcome to Edit Era</h1>
+    <p>Edit Karo. Create Karo. Shine Karo. — By Sourav Pawar</p>
+  </section>
+
+  <section id="about">
+  <h2>About Me</h2>
+  <a href="https://www.instagram.com/vt.sourav_official" target="_blank">
+    <img src="about.jpg" alt="Sourav Pawar Edit Era" class="about-img">
+  </a>
+  <p>Namaste! I’m <strong>Sourav Pawar</strong>, founder of <strong>Edit Era</strong> — powered by VTech CreatorX.
+    I transform your raw ideas into stunning visuals with modern, neon edits that stand out in today’s digital world.</p>
+  </section>
+
+
+  <section id="services">
+    <h2>Services</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Photo Editing</h3>
+        <p>Retouching, color grading, creative effects & more.</p>
+      </div>
+      <div class="card">
+        <h3>Video Editing</h3>
+        <p>Reels, YouTube cuts, motion graphics & smooth transitions.</p>
+      </div>
+      <div class="card">
+        <h3>Content Design</h3>
+        <p>Logos, thumbnails, posters, social media posts & branding kits.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio">
+      <div class="card">
+        <h3>Project 1</h3>
+        <p>Sample description of a project or work you’ve done.</p>
+      </div>
+      <div class="card">
+        <h3>Project 2</h3>
+        <p>Another project showcasing your editing style and creativity.</p>
+      </div>
+      <div class="card">
+        <h3>Project 3</h3>
+        <p>Highlight something unique, like a creative reel or poster.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Client Work</h3>
+        <p>Details of your freelance or client-based editing projects.</p>
+      </div>
+      <div class="card">
+        <h3>Collaboration</h3>
+        <p>Any collab with influencers, brands, or teams.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+  <h2>Contact Me</h2>
+  <p>📱 Mobile/WhatsApp: <strong>8770195345</strong></p>
+  <p>📧 Email: <strong>pawvirag88@gmail.com</strong></p>
+  <div class="social">
+    <p>Connect with me:</p>
+    <a href="https://www.instagram.com/vt.sourav_official" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@VTech-CreatorX" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://wa.me/918770195345" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="mailto:pawvirag88@gmail.com"><i class="fas fa-envelope"></i></a>
+  </div>
+</section>
+
+
+  <section id="help">
+    <h2>Help & FAQs</h2>
+    <p>Got questions? Feel free to reach out anytime for help regarding your edits, orders, or custom requests. I’m always here to assist you!</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Edit Era by VTech CreatorX | Designed with ❤️ by Sourav Pawar</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+
+</body>
+</html>
