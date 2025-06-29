@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VTech CreatorX | Official Website</title>
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; align-items: center; align-content: center;}
+    body { background: #000; color: #fff; font-family: 'Poppins', sans-serif; line-height: 1.6; }
+    
+    nav {
+      background: #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .logo {
+      font-size: 28px;
+      font-weight: 700;
+      background: linear-gradient(90deg, #0ff, #00f, #f0f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: neon 5s linear infinite;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    nav ul li { margin-left: 30px; }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #0ff;
+      transform: translateY(-2px);
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-toggle div {
+      width: 25px; height: 3px;
+      background: #fff; margin: 4px;
+    }
+
+    @keyframes neon {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .about-img {
+  display: block;
+  max-width: 200px;
+  border-radius: 50%;
+  border: 4px solid #0ff;
+  margin: 20px auto;
+  box-shadow: 0 0 20px #0ff;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #0ff;
+}
+
+
+    h1, h2 {
+      text-align: center;
+      background: linear-gradient(90deg, #0ff, #00f, #f0f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: neon 5s linear infinite;
+      font-weight: 700;
+    }
+
+    p {
+      text-align: center;
+      max-width: 700px;
+      margin: 20px auto;
+      color: #ccc;
+    }
+
+    .services, .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: #111;
+      border: 2px solid #0ff;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 0 30px #0ff;
+    }
+
+    .cta-link {
+      display: inline-block;
+      margin: 30px auto;
+      padding: 12px 30px;
+      background: #0ff;
+      color: #000;
+      border-radius: 30px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .cta-link:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #0ff;
+    }
+
+    .social a {
+      display: inline-block;
+      font-size: 24px;
+      color: #0ff;
+      margin: 0 10px;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .social a:hover {
+      transform: scale(1.2) rotate(5deg);
+      color: #fff;
+    }
+
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 50px;
+      border-top: 2px solid #0ff;
+    }
+
+    footer p { color: #888; font-size: 14px; }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #111;
+        position: absolute;
+        top: 70px;
+        right: 50px;
+        width: 200px;
+        border: 2px solid #0ff;
+        border-radius: 8px;
+      }
+      nav ul.show { display: flex; }
+      nav ul li { margin: 15px 0; text-align: center; }
+      .menu-toggle { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">VTech CreatorX</div>
+    <div class="menu-toggle" id="menu-toggle">
+      <div></div><div></div><div></div>
+    </div>
+    <ul id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#help">Help</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sections -->
+  <section id="home">
+    <h1>Welcome to VTech CreatorX</h1>
+    <p>Empowering creators, editors, and designers to bring your vision to life.</p>
+    <a href="editera.html" class="cta-link" target="_blank">Visit Edit Era 🚀</a>
+  </section>
+
+<section id="about">
+  <h2>About Us ✨</h2>
+  <a href="https://www.instagram.com/vt.sourav_official" target="_blank">
+    <img src="about.jpg" alt="Sourav Pawar Edit Era" class="about-img">
+  </a>
+  <p>🌟 Welcome to <strong>VTech CreatorX</strong> — your all-in-one creative powerhouse, founded by <strong>Sourav Pawar</strong>. We believe every idea deserves to shine with the magic of perfect editing, creative design, and smooth storytelling. 🎥✨</p>
+  <p>🤝 At VTech CreatorX, we’re more than just a team — we’re a community of editors, designers, animators, and digital artists. 🎨 Together, we craft stunning visuals that help individuals, influencers, and businesses grow and stand out online. 🚀</p>
+  <p>🛠️ Whether you’re looking for pro-level photo & video editing, social media branding, motion graphics, thumbnails, or custom content, we’re here to make your vision real — with our signature neon style and a touch of creative magic. 🔮</p>
+  <p>🌍 With our passion for quality, we’ve proudly delivered projects for clients around the world. We’re committed to learning, growing, and giving back to the creative community through workshops, tutorials, and collaborations. 📚✨</p>
+  <p><em>🔥 Join us on this journey — create, edit, and inspire with VTech CreatorX. Your ideas. Our edits. Unlimited impact. 💡</em></p>
+</section>
+
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card">
+      <a href="/web-design-examples.html"><h3>Web Designer</h3></a>
+      <p>Modern, responsive websites with stunning UI/UX and neon animations.</p>
+    </div>
+    <div class="card">
+      <a href="/graphics-design-examples.html"><h3>Graphics Designer</h3></a>
+      <p>Logos, posters, social posts — eye-catching designs for every need.</p>
+    </div>
+    <div class="card">
+      <a href="/animation-examples.html"><h3>Animator</h3></a>
+      <p>2D animations, motion graphics, and explainer videos that bring ideas to life.</p>
+    </div>
+    <div class="card">
+      <a href="/youtube-portfolio.html"><h3>YouTuber</h3></a>
+      <p>Creative video content, editing, and channel growth strategies.</p>
+    </div>
+    <div class="card">
+      <a href="/brand-promotion.html"><h3>Brand Promotion</h3></a>
+      <p>Grow your brand’s reach with influencer marketing and digital campaigns.</p>
+    </div>
+    <div class="card">
+      <a href="/software-development.html"><h3>Software Developer</h3></a>
+      <p>Custom software, web apps, and smart solutions to power your ideas.</p>
+    </div>
+  </div>
+</section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Client Projects</h3>
+        <p>Our work for brands, businesses, and creators around the world.</p>
+      </div>
+      <div class="card">
+        <h3>Community Work</h3>
+        <p>Collaborations, open-source projects, and creative partnerships.</p>
+      </div>
+    </div>
+  </section>
+  <section id="thumbnail-gallery">
+  <h2>My Thumbnail Edit Gallery</h2>
+  <div class="gallery">
+    <!-- Example clickable folder cards -->
+    <a href="thumbnail/" class="gallery-folder">
+      <img src="6306484.jpg" alt="Folder 1">
+      <p>All Image Edit/p>
+    </a>
+    <a href="/gallery/folder2" class="gallery-folder">
+      <img src="6306484.jpg" alt="Folder 2">
+      <p>All Video Edit</p>
+    <!-- Add up to 40+ folders or thumbnails as needed -->
+  </div>
+  <style>
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .gallery-folder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #111;
+      border: 2px solid #0ff;
+      border-radius: 8px;
+      padding: 20px;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .gallery-folder:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #0ff;
+    }
+    .gallery-folder img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+    .gallery-folder p {
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</section>
+
+  <section id="team">
+    <h2>Our Team</h2>
+    <p>A passionate crew of editors, designers, and creators led by <strong>Sourav Pawar</strong>.</p>
+  </section>
+  <section id="channels">
+  <h2>My YouTube Channels</h2>
+  <div class="channels">
+    <a href="https://www.youtube.com/@editz_era1" target="_blank" class="channel-card">
+      <img src="edit.png" alt="Edit Era Logo">
+      <p>Edit Era</p>
+    </a>
+    <a href="https://www.youtube.com/@VTech-CreatorX" target="_blank" class="channel-card">
+      <img src="creatorx.png" alt="VTech CreatorX Logo">
+      <p>VTech CreatorX</p>
+    </a>
+    <a href="https://www.youtube.com/@Luckythegamer666" target="_blank" class="channel-card">
+      <img src="gamr.png" alt="VTech GamerX Logo">
+      <p>VTech GamerX</p>
+    </a>
+    <a href="https://www.youtube.com/@VTechKidsToons" target="_blank" class="channel-card">
+      <img src="kids.png" alt="VTech Kids Toons Logo">
+      <p>VTech Kids Toons</p>
+    </a>
+    <a href="https://www.youtube.com/@dg_vtech" target="_blank" class="channel-card">
+      <img src="dg.png" alt="VTech Kids Toons Logo">
+      <p>VTech DG Gyaan</p>
+    </a>
+  </div>
+  <style>
+    .channels {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .channel-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #111;
+      border: 2px solid #0ff;
+      border-radius: 8px;
+      padding: 20px;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .channel-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #0ff;
+    }
+    .channel-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .channel-card p {
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>📱 WhatsApp: <strong>8770195345</strong></p>
+    <p>📧 Email: <strong>pawvirag88@gmail.com</strong></p>
+    <div class="social">
+      <a href="https://www.instagram.com/vt.sourav_official" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@yourchannel" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://wa.me/918770195345" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:pawvirag88@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </section>
+
+  <section id="help">
+    <h2>Help & FAQs</h2>
+    <p>Need support? We’re always ready to help you with your creative journey.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 VTech CreatorX | Designed with ❤️ by Sourav Pawar</p>
+    <div class="social">
+      <a href="https://www.instagram.com/vt.sourav_official" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@VTech-CreatorX" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://wa.me/918770195345" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+
+</body>
+</html>
